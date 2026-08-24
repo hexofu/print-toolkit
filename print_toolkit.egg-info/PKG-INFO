@@ -1,3 +1,20 @@
+Metadata-Version: 2.4
+Name: print-toolkit
+Version: 1.0.0
+Summary: Additional useful output features - multi‑colored text (RGB) and animated loading
+Author: Hexofu
+Author-email: sashanaumov0101@gmail.com
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: author
+Dynamic: author-email
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: license-file
+Dynamic: requires-python
+Dynamic: summary
+
 
 # Print Toolkit
 

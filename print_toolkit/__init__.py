@@ -26,7 +26,6 @@ def printclr(text, color = None, sep = " ", end = "\n"):
         print(f"{color}{text}{RESET}", sep=sep, end=end)
     else:
         print(text, sep=sep, end=end)
-
 def printrgb(text, r = None, g = None, b = None, sep = " ", end = "\n"):
     if not (r is None and g is None and b is None):
         print(f"\033[38;2;{r};{g};{b}m{text}{RESET}", sep=sep, end=end)
