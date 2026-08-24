@@ -57,12 +57,7 @@ def visload(style = "default", text = "Loading: ", start = 1, end = 100, delay =
 
     print()
 
-
-
-
-printrgb("Hello ")
-visload(text = "Загрузка: ", start = 1, end = 50, delay = 0.1, color = GREEN)
-visload(text = "Загрузка: ", style = "minusplus", start = 1, end = 50, delay = 0.1, color = GREEN)
-visload(text = "Загрузка: ", style = "circles", start = 1, end = 50, delay = 0.1, color = BLUE)
-visload(text = "Загрузка: ", style = "squares", start = 1, end = 50, delay = 0.1, color = BLUE)
-visload(text = "Загрузка: ", style = "lines", start = 1, end = 50, delay = 0.1, color = RED)
+__all__ = [
+    "BLACK", "RED", "GREEN", "YELLOW", "BLUE", "MAGENTA", "CYAN", "WHITE",
+    "RESET", "printclr", "visload", "printrgb", "styles"
+]
