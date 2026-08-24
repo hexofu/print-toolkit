@@ -5,12 +5,12 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="print-toolkit",
-    version="1.0.0",
+    version="1.0.1",
     author="Hexofu",
     author_email="sashanaumov0101@gmail.com",
     description="Additional useful output features - multi‑colored text (RGB) and animated loading",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    packages=["print_toolkit"],  # или find_packages()
+    packages=["print_toolkit"],
     python_requires=">=3.6",
 )
