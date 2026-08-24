@@ -1,3 +1,5 @@
+from . import *
+
 from time import sleep
 
 BLACK = "\033[30m"
@@ -56,8 +58,3 @@ def visload(style = "default", text = "Loading: ", start = 1, end = 100, delay =
             total += 1
 
     print()
-
-__all__ = [
-    "BLACK", "RED", "GREEN", "YELLOW", "BLUE", "MAGENTA", "CYAN", "WHITE",
-    "RESET", "printclr", "visload", "printrgb", "styles"
-]
