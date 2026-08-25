@@ -13,6 +13,11 @@ WHITE = "\033[37m"
 
 RESET = "\033[0m"
 
+BOLD = "\033[1m"
+STRIKE = "\033[9m"
+UNDERLINE = "\033[4m"
+ITALIC = "\033[3m"
+
 styles = {
     "minusplus": ("-", "+"),
     "zeroone": ("0", "1"),
@@ -23,7 +28,7 @@ styles = {
     "lines": ("\\", "/")
 }
 
-def print_box(title = None, text = "", width = None, border = "=", color = None):
+def print_box(title = None, text = "", width = None, border = "=", color = None, style = ""):
     if width is None:
         title_len = len(title) if title else 0
         text_len = len(text)
@@ -37,25 +42,28 @@ def print_box(title = None, text = "", width = None, border = "=", color = None)
     bot = f"└{'─' * width}┘"
 
     if color:
-        printclr(top, color)
-        printclr(mid, color)
-        printclr(bot, color)
+        printclr(top, color, style = style)
+        printclr(mid, color, style = style)
+        printclr(bot, color, style = style)
 
     else:
-        printclr(top)
-        printclr(mid)
-        printclr(bot)
+        printclr(top, style = style)
+        printclr(mid, style = style)
+        printclr(bot, style = style)
 
-def printclr(text, color = None, sep = " ", end = "\n"):
+def printclr(*args, color = None, style = "", sep = " ", end = "\n"):
     if color:
-        print(f"{color}{text}{RESET}", sep=sep, end=end)
+        colored = [f"{style}{color}{arg}{RESET}" for arg in args]
+        print(*colored, sep=sep, end=end)
     else:
-        print(text, sep=sep, end=end)
-def printrgb(text, r = None, g = None, b = None, sep = " ", end = "\n"):
+        print(*args, sep=sep, end=end)
+
+def printrgb(*args, r = None, g = None, b = None, style = "", sep = " ", end = "\n"):
     if not (r is None and g is None and b is None):
-        print(f"\033[38;2;{r};{g};{b}m{text}{RESET}", sep=sep, end=end)
+        colored = [f"{style}\033[38;2;{r};{g};{b}m{arg}{RESET}" for arg in args]
+        print(*colored, sep=sep, end=end)
     else:
-        print(text, sep=sep, end=end)
+        print(*args, sep=sep, end=end)
 
 def visload(style = "default", text = "Loading: ", start = 1, end = 100, delay = 0.1, color = None):
     total = start
