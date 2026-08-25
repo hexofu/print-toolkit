@@ -42,14 +42,14 @@ def print_box(title = None, text = "", width = None, border = "=", color = None,
     bot = f"└{'─' * width}┘"
 
     if color:
-        printclr(top, color, style = style)
-        printclr(mid, color, style = style)
-        printclr(bot, color, style = style)
+        print(f"{style}{color}{top}{RESET}")
+        print(f"{style}{color}{mid}{RESET}")
+        print(f"{style}{color}{bot}{RESET}")
 
     else:
-        printclr(top, style = style)
-        printclr(mid, style = style)
-        printclr(bot, style = style)
+        print(f"{style}{top}{RESET}")
+        print(f"{style}{mid}{RESET}")
+        print(f"{style}{bot}{RESET}")
 
 def printclr(*args, color = None, style = "", sep = " ", end = "\n"):
     if color:
