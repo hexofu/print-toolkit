@@ -23,6 +23,31 @@ styles = {
     "lines": ("\\", "/")
 }
 
+def clear_screen():
+    import os
+    os.system("cls" if os.name == "nt" else "clear")
+
+def print_box(title = None, text = "", width = None, border = "=", color = None):
+    if width is None:
+        width = max(len(title) + 4, 20)
+
+    title_part = f"{title} " if title else ""
+    title_len = len(title_part)
+
+    top = f"┌─{title_part}{border * (width - title_len)}┐"
+    mid = f"│ {text}{' ' * (width - len(text) - 2)} │"
+    bot = f"└{'─' * width}┘"
+
+    if color:
+        printclr(top, color)
+        printclr(mid, color)
+        printclr(bot, color)
+
+    else:
+        printclr(top)
+        printclr(mid)
+        printclr(bot)
+
 def printclr(text, color = None, sep = " ", end = "\n"):
     if color:
         print(f"{color}{text}{RESET}", sep=sep, end=end)
