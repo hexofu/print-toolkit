@@ -34,7 +34,7 @@ def print_box(title = None, text = "", width = None, border = "=", color = None)
 
     top = f"┌─{title_part}{border * (width - title_len - 1)}┐"
     mid = f"│ {text}{' ' * (width - len(text) - 2)} │"
-    bot = f"└{'─' * (width - 1)}┘"
+    bot = f"└{'─' * width}┘"
 
     if color:
         printclr(top, color)
