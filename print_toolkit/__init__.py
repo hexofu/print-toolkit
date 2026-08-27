@@ -84,9 +84,9 @@ def pulse(text, delay = 0.1, times = 5, color = None):
         print(f"\r{' ' * len(text)}", end = "", flush = True)
         sleep(delay)
     if color:
-        print(f"\r{color}{text}{RESET}", end="", flush=True)
+        print(f"\r{color}{text}{RESET}")
     else:
-        print(f"\r{text}", end="", flush=True)
+        print(f"\r{text}")
 
 def visload(style = "default", text = "Loading: ", start = 1, end = 100, delay = 0.1, color = None):
     total = start
