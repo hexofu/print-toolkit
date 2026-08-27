@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="print-toolkit",
-    version="1.3.0",
+    version="1.3.1",
     author="Hexofu",
     author_email="sashanaumov0101@gmail.com",
     description="Additional useful output features - multi‑colored text (RGB) and animated loading",
