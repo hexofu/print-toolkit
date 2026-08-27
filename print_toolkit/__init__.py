@@ -68,9 +68,9 @@ def printrgb(*args, r = None, g = None, b = None, style = "", sep = " ", end = "
 def typewriter(text, delay = 0.1, color = None):
     for char in text:
         if color:
-            print(f"\r{color}{char}{RESET}", end="", flush=True)
+            print(f"{color}{char}{RESET}", end="", flush=True)
         else:
-            print(f"\r{char}", end="", flush=True)
+            print(char, end="", flush=True)
         sleep(delay)
     print()
 
