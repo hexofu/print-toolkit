@@ -65,28 +65,28 @@ def printrgb(*args, r = None, g = None, b = None, style = "", sep = " ", end = "
     else:
         print(*args, sep=sep, end=end)
 
-def typewriter(text, delay = 0.1, color = None):
+def typewriter(text, delay = 0.5, color = None, style = ""):
     for char in text:
         if color:
-            print(f"{color}{char}{RESET}", end="", flush=True)
+            print(f"{style}{color}{char}{RESET}", end="", flush=True)
         else:
-            print(char, end="", flush=True)
+            print(f"{style}{char}", end="", flush=True)
         sleep(delay)
-    print()
+    print(RESET)
 
-def pulse(text, delay = 0.1, times = 5, color = None):
-    for _ in range(times):
+def pulse(text, delay = 0.5, times = 5, color = None, style = ""):
+    for _ in range(times - 1):
         if color:
-            print(f"\r{color}{text}{RESET}", end = "", flush = True)
+            print(f"\r{style}{color}{text}{RESET}", end = "", flush = True)
         else:
-            print(f"\r{text}", end = "", flush = True)
+            print(f"\r{style}{text}", end = "", flush = True)
         sleep(delay)
         print(f"\r{' ' * len(text)}", end = "", flush = True)
         sleep(delay)
     if color:
-        print(f"\r{color}{text}{RESET}")
+        print(f"\r{style}{color}{text}{RESET}")
     else:
-        print(f"\r{text}")
+        print(f"\r{style}{text}{RESET}")
 
 def visload(style = "default", text = "Loading: ", start = 1, end = 100, delay = 0.1, color = None):
     total = start
