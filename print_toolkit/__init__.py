@@ -175,13 +175,13 @@ class Logger:
         else:
             label = level_data["label"]
 
-        parts.append(label)
+        parts.append(f"{color}{label}{RESET}")
 
         parts.append(f"\033[36m{self.name}{RESET}")
 
         if args:
             message = message.format(*args)
-        parts.append(message)
+        parts.append(f"{color}{message}{RESET}")
 
         print(" ".join(parts), sep=sep, end=end)
 
