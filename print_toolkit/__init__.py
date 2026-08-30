@@ -239,7 +239,7 @@ __all__ = [
     "typewriter", "pulse", "visload",
 
     "Logger", "get_logger", "log_debug", "log_info",
-    "log_success", "log_warning", "log_error",
+    "log_success", "log_warning", "log_error", "log_critical",
 
     "styles"
 ]
